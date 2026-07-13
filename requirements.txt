@@ -1,0 +1,21 @@
+# Collectors
+playwright
+beautifulsoup4
+requests
+pandas
+openpyxl
+
+# Pipeline
+groq
+sentence-transformers
+
+# Database
+psycopg2-binary
+pgvector
+
+# Dashboard
+streamlit
+plotly
+
+# Utilities
+python-dotenv

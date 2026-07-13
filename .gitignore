@@ -1,0 +1,26 @@
+# Environment
+.env
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Downloads and logs (auto-created by the app)
+downloads/
+logs/
+
+# Database files
+*.db
+*.sqlite
+
+# Sentence transformers model cache
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+# PDF files
+*.pdf
