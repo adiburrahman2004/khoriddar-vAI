@@ -1,4 +1,4 @@
-# Environment
+﻿# Environment
 .env
 venv/
 
@@ -8,7 +8,7 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
-# Downloads and logs (auto-created by the app)
+# Downloads and logs
 downloads/
 logs/
 
@@ -22,5 +22,9 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
 # PDF files
 *.pdf
+
+# Local key files
+supabase api keys.txt
