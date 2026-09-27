@@ -34,17 +34,12 @@ class BaseCollector:
             if self.playwright:
                 self.playwright.stop()
 
-    def save_file(self, source_bytes, filename_prefix, extension="xlsx"):
+    def save_file(self, source_bytes, filename_prefix, extension="xlsx", file_date=None):
         downloads = Path("downloads")
         downloads.mkdir(exist_ok=True)
-
-        filename = (
-            downloads
-            / f"{filename_prefix}_{date.today().isoformat()}.{extension}"
-        )
-
+        file_date = file_date or date.today()
+        filename = downloads / f"{filename_prefix}_{file_date.isoformat()}.{extension}"
         with open(filename, "wb") as f:
             f.write(source_bytes)
-
         self.logger.info(f"Saved file: {filename}")
         return filename
