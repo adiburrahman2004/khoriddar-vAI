@@ -1,3 +1,5 @@
+import sys
+import io
 import logging
 from pathlib import Path
 from datetime import date
@@ -13,10 +15,15 @@ class BaseCollector:
 
         Path("logs").mkdir(exist_ok=True)
 
+        console_stream = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+
         logging.basicConfig(
-            filename="logs/collector.log",
             level=logging.INFO,
             format="%(asctime)s - %(levelname)s - %(message)s",
+            handlers=[
+                logging.FileHandler("logs/collector.log", encoding="utf-8"),
+                logging.StreamHandler(console_stream),
+            ],
         )
         self.logger = logging.getLogger(name)
 
