@@ -6,16 +6,15 @@ from collectors.base_collector import BaseCollector
 BN_DIGITS = "০১২৩৪৫৬৭৮৯"
 EN_TO_BN = {str(i): BN_DIGITS[i] for i in range(10)}
 
-
 def to_bengali_digits(text):
-   return "".join(EN_TO_BN.get(char, char) for char in text)
+      return "".join(EN_TO_BN.get(char, char) for char in text)
 
 
 def to_english_digits(text):
-   return "".join(
+      return "".join(
       str(BN_DIGITS.index(char)) if char in BN_DIGITS else char
       for char in text
-   )
+)
 
 
 class TCBCollector(BaseCollector):
